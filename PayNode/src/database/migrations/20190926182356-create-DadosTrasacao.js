@@ -1,52 +1,47 @@
 
 module.exports = {
-  up: (queryInterface, Sequelize) => queryInterface.createTable('Transacao', {
+  up: (queryInterface, Sequelize) => queryInterface.createTable('DadosTransacao', {
     id: {
       type: Sequelize.INTEGER,
       allowNull: false,
       autoIncrement: true,
       primaryKey: true,
     },
-    valor_entrada: {
+    status: {
       type: Sequelize.STRING,
-      allowNull: false,
-    },
-    valor_saida: {
-      type: Sequelize.STRING,
-      allowNull: false,
-    },
-    qtd_parcela: {
-      type: Sequelize.STRING,
-      allowNull: false,
 
     },
-    cpf: {
+    acquirer_id: {
       type: Sequelize.STRING,
-      allowNull: false,
     },
-    agencia: {
+    authorization_code: {
       type: Sequelize.STRING,
-      allowNull: false,
     },
-    cc: {
+    amount: {
       type: Sequelize.STRING,
-      allowNull: false,
+
+    },
+    id_processadora: {
+      type: Sequelize.STRING,
+
+    },
+    card_holder_name: {
+      type: Sequelize.STRING,
+
+    },
+    card_last_digits: {
+      type: Sequelize.STRING,
+
+    },
+    card_brand: {
+      type: Sequelize.STRING,
+
     },
     user_id: {
       type: Sequelize.INTEGER,
       references: { model: 'users', key: 'id' },
-      onUpdate: 'CASCADE',
-      onDelete: 'SET NULL',
       allowNull: true,
     },
-    dadostransacao_id: {
-      type: Sequelize.INTEGER,
-      references: { model: 'DadosTrasacao', key: 'id' },
-      onUpdate: 'CASCADE',
-      onDelete: 'SET NULL',
-      allowNull: true,
-    },
-
     created_at: {
       type: Sequelize.DATE,
       allowNull: false,
@@ -57,6 +52,5 @@ module.exports = {
     },
 
   }),
-
-  down: (queryInterface) => queryInterface.dropTable('Transacao'),
+  down: (queryInterface) => queryInterface.dropTable('DadosTransacao'),
 };
