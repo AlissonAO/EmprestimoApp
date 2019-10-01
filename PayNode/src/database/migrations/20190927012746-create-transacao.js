@@ -41,7 +41,7 @@ module.exports = {
     },
     dadostransacao_id: {
       type: Sequelize.INTEGER,
-      references: { model: 'DadosTrasacao', key: 'id' },
+      references: { model: 'DadosTransacao', key: 'id' },
       onUpdate: 'CASCADE',
       onDelete: 'SET NULL',
       allowNull: true,

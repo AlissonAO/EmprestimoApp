@@ -28,6 +28,7 @@ class TrasacaoController {
         billing,
         items,
       });
+      console.log(pagarmeTransaction);
       const dadosTransacao = await DadosTransacao.create({
         status: pagarmeTransaction.status,
         acquirer_id: pagarmeTransaction.acquirer_id,

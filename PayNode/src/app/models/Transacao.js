@@ -21,7 +21,7 @@ class Transacao extends Model {
 
   static associateUser(models) {
     this.belongsTo(models.User, { foreignKey: 'user_id', as: 'user' });
-    this.belongsTo(models.DadosTransacao, { foreignKey: 'dadostransacao_id', as: 'dadosTra' });
+    this.belongsTo(models.DadosTransacao, { foreignKey: 'dadostransacao_id', as: 'DadosTransacao' });
   }
 }
 
