@@ -1,8 +1,8 @@
-import DadosDeposito from '../models/DadosDeposito';
+import DadosTransacao from '../models/DadosTransacao';
 
 class DadosTransacaoController {
   async store(req, res) {
-    const dados = await DadosDeposito.create(req.body);
+    const dados = await DadosTransacao.create(req.body);
     return res.json(dados);
   }
 }

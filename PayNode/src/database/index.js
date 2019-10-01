@@ -1,11 +1,12 @@
 import Sequelize from 'sequelize';
 
 import DadosTransacao from '../app/models/DadosTransacao';
+import EnderecoUsuario from '../app/models/EnderecoUsuario';
 import User from '../app/models/User';
 import Trasacao from '../app/models/Transacao';
 import databaseConfig from '../config/database';
 
-const models = [DadosTransacao, User, Trasacao];
+const models = [DadosTransacao, User, Trasacao, EnderecoUsuario];
 class Database {
   constructor() {
     this.init();
